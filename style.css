@@ -9,14 +9,16 @@
     background-color: #f7f1df;
     padding: 20px;
     margin: 0px;
+    font-family: 'Rockwell Nova', sans-serif;
 }
 .header{
     border: 6px solid #734b07;
-    background-color: #f7f1df;
+    background-color: #ffffff;
     padding: 20px;
     margin-bottom: 20px;
     word-wrap: normal;
     width:fit-content;
+    font-family: 'TF2 Build', sans-serif;
 }
 .footer{
     border-top: solid 20px #000;
