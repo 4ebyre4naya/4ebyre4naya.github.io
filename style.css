@@ -9,7 +9,8 @@
     background-color: #f7f1df;
     padding: 20px;
     margin: 0px;
-    font-family: 'Rockwell Nova', sans-serif;
+    font-family: 'TF2Secondary', sans-serif;
+    font-size: 24px;
 }
 .header{
     border: 6px solid #734b07;
@@ -24,3 +25,11 @@
     border-top: solid 20px #000;
     background-color: #ffffff;
 }
+@font-face {
+    font-family: 'TF2Secondary'; /* Name your font family */
+    src: url(./17227.ttf); /* Locate the .ttf file within your directory*/
+  }
+  
+  body {
+    font-family: 'TF2Secondary', sans-serif; /* Use the font family */
+  }
