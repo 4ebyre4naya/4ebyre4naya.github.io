@@ -6,7 +6,7 @@
 }
 .figure1{
     border: 6px solid #734b07;
-    background-color: #f7f1df;
+    background-color: #fff6dc;
     padding: 20px;
     margin: 0px;
     font-family: 'TF2Secondary', sans-serif;
@@ -14,16 +14,18 @@
 }
 .header{
     border: 6px solid #734b07;
-    background-color: #ffffff;
+    background-color: #ffe8b3;
     padding: 20px;
     margin-bottom: 20px;
     word-wrap: normal;
     width:fit-content;
     font-family: 'TF2 Build', sans-serif;
+    text-align: center;
 }
 .footer{
-    border-top: solid 20px #000;
-    background-color: #ffffff;
+    border-top: solid 20px #171717;
+    background-color: #171717;
+    color:#ffffff;
 }
 @font-face {
     font-family: 'TF2Secondary'; /* Name your font family */
@@ -32,4 +34,7 @@
   
   body {
     font-family: 'TF2Secondary', sans-serif; /* Use the font family */
+  }
+  a{
+    text-decoration: none;
   }
