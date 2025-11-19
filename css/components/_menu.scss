@@ -9,7 +9,7 @@
         display: flex;
         column-gap: 24px;
         width: 100%;
-        margin:30px 0 0 0;
+        margin:29px 0 0 0;
         button,li{
             display: block;
             width: 100%;
@@ -22,7 +22,10 @@
 }
 .menu__cards{
     display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    column-gap: 22px;
     row-gap: 111px;
     // flex-wrap: wrap;
     width: 100%;
@@ -32,8 +35,8 @@
     background-color: $secondary-color;
     padding: 0px 34px 23px 34px;
     column-gap: 20px;
-    max-width: 229px;
-    width:100%;
+    width: 100%;
+    box-sizing: border-box;
     p{
         width:100%;
         text-align: start;
@@ -41,7 +44,6 @@
         margin: 0 0 22px 0;
         color:$secondary-text;
     }
-    
         .sizes{
         margin: 0 0 20px 0;
         display: flex;
@@ -58,20 +60,28 @@
     }
 }
 .card__functional{
-        width:194px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 17px;
+    display: flex;
+    flex-direction: column;
+        button.passive-button{
+            padding: 13px 0;
+        }
         .price-controls{
-            margin: 0 0 22px 0;
+            margin: 0 0 23px 0;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: end;
             .price{
                 display: flex;
+                align-items: start;
                 span:first-child{
                     margin-top: 4px;
                     @include MullerR(24px);
                 }
                 span:last-child{
-                    margin-bottom: auto;
+                    margin: 3px 0 0 6px;
                     @include MullerEB(16px);
                 }
             }
@@ -92,22 +102,21 @@
             }
             .gradient-stroke{
             @include GradientStrokeButton($secondary-color);
-            width: 100%;
             padding:0 0;
             margin: 0 0 20px 0;
             button{
             @include MullerR(16px);
             width:100%;
-            padding:12px 0px;
+            padding: 9px 0;
         }
     }
-        }
+}
 .card__content{
         margin: -57px 0 0 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        box-sizing: border-box;
     }
     .card__title{
         @include MullerR(24px);
@@ -123,10 +132,10 @@
     width:100%;
     text-align: center;
     padding:119px 0;
-    background-image: url(/images/menu_most_popular.png);
+    background-image: url(../../images/menu_most_popular.png);
     border-radius: 34px;
     border-radius: 34px;
-    margin: 54px 0 111px 0;
+    margin: 54px 0 113px 0;
 }
 .passive-button{
     width: 100%;

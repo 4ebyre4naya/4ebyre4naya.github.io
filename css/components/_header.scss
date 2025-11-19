@@ -1,24 +1,30 @@
 header{
     font-family: 'MullerR',sans-serif;
     margin-bottom: 5px;
+    
 }
 .logo{
     @include MullerEB(34px);
     background-image:$primary-gradient;
     color:transparent;
-    width: 165px;
+    width: 158px;
     background-clip: text;
 }
 .header__nav{
         display: flex;
         justify-content: space-between;
+        align-items: start;
         padding: 56px 0;
+        column-gap: 20px;
         .header__menu{
+                @include MullerR(18px);
                 padding: 0 0 0 0;
                 display: flex;
-                gap:80px;
-                margin:auto 0 0 0;
+                justify-content: space-between;
+                max-width: 473px;
+                width: 100%;
                 li a{
+                    width: max-content;
                     color: $secondary-text;
                     align-items: center;
                     gap:7px;
@@ -53,6 +59,7 @@ header{
             }
         }
 }
+
 .burger-menu{
     background-color: transparent;
     display: none;

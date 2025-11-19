@@ -3,7 +3,7 @@
 }
 .aboutus-wrapper{
     display: flex;
-    flex-wrap: wrap;
+    column-gap: 20px;
     justify-content: space-between;
     row-gap: 63px;
 }
@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: space-between;
     max-width: 510px;
+    width: 100%;
     p{
         @include MullerR(20px);
         width: 382px;
@@ -19,6 +20,9 @@
         &:nth-child(1){
             margin-bottom: 20px;
         }
+    }
+    img{
+        width: 100%;
     }
 }
 .aboutus__img-block img{

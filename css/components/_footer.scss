@@ -8,8 +8,7 @@ footer{
 .footer__text-block{
     width:78.63%;
     display: flex;
-    column-gap: 86px;
-    
+    column-gap: 68px;
     margin-bottom: 96px;
 }
 .footer__lists{
@@ -17,16 +16,17 @@ footer{
     display: flex;
     max-width: 760px;
     justify-content: space-between;
+    margin-top: 4px;
     ul{
         @include MullerR(18px);
         color:$third-text;
         width: max-content;
         li{
-            margin-bottom: 11px;
+            margin-bottom: 14px;
         }
         li:first-child{
             color:$secondary-text;
-            margin-bottom: 19px;
+            margin-bottom: 18px;
             @include MullerR(20px);
         }
     }
@@ -34,9 +34,10 @@ footer{
 .footer__socials-block{
     display: flex;
     justify-content: space-between;
+    align-items: end;
     ul{
         display: flex;
-        column-gap: 12px;
+        column-gap: 16px;
         align-items: center;
         img{
             width: 24px;
@@ -45,6 +46,7 @@ footer{
 }
 .telephone{
     @include MullerR(20px);
+    line-height: 100%;
     background-image:$primary-gradient;
     color:transparent;
     background-clip: text;

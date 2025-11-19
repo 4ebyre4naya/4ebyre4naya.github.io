@@ -6,7 +6,9 @@
 @import "./components/_events";
 @import "./components/_aboutus";
 @import "./components/footer";
-
+html{
+    overflow-x: hidden;
+}
 *{
     padding:0 0;
     margin:0 0;
@@ -39,13 +41,13 @@ button{
     }
     &.active-button{
         @include MullerEB(20px);
-        padding: 23.5px 0;
+        padding: 20.1px 0;
         @include ActiveButton;
     }
     &.menu-button{
         @include MenuButton;
         @include MullerEB(20px);
-        padding: 23.5px 0;
+        padding:20.1px 0;
     }
     &.card-button{
         @include CardButton;
@@ -74,13 +76,6 @@ h4{
     .container{
         max-width: 786px;
     }
-    header{
-        .header__nav{
-            .header__menu{
-            gap:40px;
-        }
-    }
-    }
     .info{
         .info-wrapper{
             flex-wrap: wrap;
@@ -92,18 +87,15 @@ h4{
         .info__promo-image{
             order: -1;
             max-width: 100%;
-            height: 200px;
             background-position: center;
         }
     }
     .menu{
         .menu__cards{
             max-width: 100%;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .menu__cards-card{
-            max-width:300px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            column-gap: 60px;
         }
     }
     .menu-wrapper{
@@ -130,12 +122,22 @@ h4{
     .aboutus{
         .aboutus-wrapper{
             justify-content: center;
+            flex-wrap: wrap;
         }
         .aboutus__img-block{
             width: 68%;
             order: -1;
             img{
                 width: 100%;
+            }
+        }
+        .aboutus__text-block{
+            row-gap: 29px;
+            p{
+                width: 100%;
+            }
+            h2{
+                text-align: center;
             }
         }
     }
@@ -153,6 +155,9 @@ h4{
         display: flex;
         max-width: 576px;
     }
+    .logo{
+        font-size: 26px;
+    }
     header{
         .header__nav{
             .header__menu{
@@ -165,31 +170,106 @@ h4{
         .burger-menu{
             display: block;
         }
+        .header__nav .header__login button.passive-button{
+            width: 30px;
+            height: 30px;
+            svg{
+                width:21px;
+                height: 20px;
+            }
+        }
+        
     }
     .menu{
         .menu__buttons{
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: 60px 60px;
+            gap:15px;
             max-height: 100px;
             row-gap: 15px;
-            li:nth-child(2){
-                max-width: 24%;
-            }
-            li:nth-child(1),li:nth-child(3){
-                max-width: 34%;
+            li:nth-child(2),li:nth-child(1),li:nth-child(3){
+                grid-column: span 2;
             }
             li:nth-child(4),li:nth-child(5){
-                flex-grow: 1;
+                grid-column: span 3;
             }
         }
         .menu__cards-card{
-            max-width: 240px;
+            column-gap: 30px;
             padding:0 21px 14px 21px;
+        }
+    }
+    .events{
+        .events-row{
+            column-gap: 7px;
+            
+        }
+        .events__text-block-second{
+            h2{
+                font-size: 56px;
+            }
+        }
+        .events__img-block{
+            padding: 54px 10px 20px 10px;
+            height: 110px;
+        div{
+            width: 100%;
+            h4{
+                font-size: 20px;
+            }
+            button{
+                width: 80px;
+                font-size: 12px;
+            }
+        }
+    }
+    }
+    footer{
+        .footer__text-block{
+            flex-wrap: wrap;
+            row-gap: 58px;
+        }
+        .footer__lists{
+            margin: 0 0;
+            width: 100%;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
         }
     }
 }
 @media(max-width: 576px){
     .container{
-        max-width: 377px;
+        max-width: 320px;
+    }
+    header{
+
+    }
+    .info{
+
+    }
+    .menu{
+        .menu__cards{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4,auto);
+        }
+    }
+    .events{
+        h2{
+            font-size: 48px;
+        }
+        .events__img-block div{ 
+            h4{
+                font-size: 15px;
+            }
+            button{
+                max-width: 60px;
+                font-size: 10px;
+            }
+        }
+    }
+    .aboutus{
+
     }
 }

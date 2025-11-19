@@ -1,10 +1,9 @@
 .info{
-    margin-bottom: 112px;
+    margin-bottom: 116px;
 }
 .info-wrapper{
         display: flex;
         justify-content: space-between;
-        
         align-items: end;
         row-gap: 40px;
     }
@@ -15,11 +14,15 @@
             color:$secondary-text;
             @include MullerR(20px);
             h1{
-                margin-bottom: 28px;
+                margin-bottom: 36px;
                 width:100%;
+                line-height: 80%;
+                svg{
+                    margin: 0 0 0 10px;
+                }
             }
             p{
-                margin-bottom: 17px;
+                margin-bottom: 23px;
                 width: 410px;
             }
             .info__promo-text-buttons{
@@ -32,18 +35,44 @@
             }
         }
         .info__promo-image{
+            position: relative;
             background-size: cover;
             background-image: url("../../images/Info_pizza.png");
             border-radius: 46px;
             height: 684px;
             width: 100%;
             max-width: 456px;
+            &::before{
+                content: "";
+                width: 202px;
+                height: 202px;
+                // top:-13%;
+                // left:74%;
+                transform: translate(200%,200px);
+                position: absolute;
+                background-image: url("../../images/overlayfries.png");
+            }
         }
 .info__promo-video{
     display: flex;
     flex-direction: column;
     margin-bottom: 58px;
+    span{
+        margin-bottom: 8px;
+    }
     video{
         border-radius: 23px;
     }
+}
+.info__fries{
+    position: absolute;
+    top:83%;
+    left:-26%;
+    pointer-events: none;
+}
+.info__pizza{
+    position: absolute;
+    pointer-events: none;
+    top:-13%;
+    left:74%;
 }
