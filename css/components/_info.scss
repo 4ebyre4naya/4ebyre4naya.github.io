@@ -1,0 +1,49 @@
+.info{
+    margin-bottom: 112px;
+}
+.info-wrapper{
+        display: flex;
+        justify-content: space-between;
+        
+        align-items: end;
+        row-gap: 40px;
+    }
+.info__promo-text{
+    display: flex;
+    flex-direction: column;
+            width: 560px;
+            color:$secondary-text;
+            @include MullerR(20px);
+            h1{
+                margin-bottom: 28px;
+                width:100%;
+            }
+            p{
+                margin-bottom: 17px;
+                width: 410px;
+            }
+            .info__promo-text-buttons{
+                width: 390px;
+                display: flex;
+                @include GradientStrokeButton($bg-color);
+                .active-button{
+                    width: 230px;
+                }
+            }
+        }
+        .info__promo-image{
+            background-size: cover;
+            background-image: url("../../images/Info_pizza.png");
+            border-radius: 46px;
+            height: 684px;
+            width: 100%;
+            max-width: 456px;
+        }
+.info__promo-video{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 58px;
+    video{
+        border-radius: 23px;
+    }
+}

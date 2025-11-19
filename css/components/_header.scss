@@ -1,0 +1,59 @@
+header{
+    font-family: 'MullerR',sans-serif;
+    margin-bottom: 5px;
+}
+.logo{
+    @include MullerEB(34px);
+    background-image:$primary-gradient;
+    color:transparent;
+    width: 165px;
+    background-clip: text;
+}
+.header__nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 56px 0;
+        .header__menu{
+                padding: 0 0 0 0;
+                display: flex;
+                gap:80px;
+                margin:auto 0 0 0;
+                li a{
+                    color: $secondary-text;
+                    align-items: center;
+                    gap:7px;
+                    svg{
+                        visibility: hidden;
+                    }
+                    display: flex;
+                    flex-direction:column;
+                }
+                li a:hover{
+                    @include GradientText;
+                    svg{
+                        visibility:visible;
+                    }
+                }   
+        }
+        .header__login{
+            display: flex;
+            padding: 0 0;
+            margin:0 0;
+            gap: 27px;
+            .header__login-button{
+                width: 165px;
+            }
+            .cart-icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                width:40px;
+                padding: 0 0;
+            }
+        }
+}
+.burger-menu{
+    background-color: transparent;
+    display: none;
+}

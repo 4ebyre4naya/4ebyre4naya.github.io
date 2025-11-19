@@ -1,0 +1,27 @@
+.aboutus{
+    margin-bottom: 130px;
+}
+.aboutus-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 63px;
+}
+.aboutus__text-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 510px;
+    p{
+        @include MullerR(20px);
+        width: 382px;
+        color:$secondary-text;
+        &:nth-child(1){
+            margin-bottom: 20px;
+        }
+    }
+}
+.aboutus__img-block img{
+    width: fit-content;
+    border-radius: 34px;
+}

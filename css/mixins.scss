@@ -1,0 +1,94 @@
+@font-face {
+    // font-family: 'muller-regular',sans-serif;
+    // src: local('muller-regular'),url('../../fonts/muller-regular.woff') format('woff');font-style: normal; font-weight: normal;
+    font-family: 'Muler';   src: local('Muler'), local('Muler'),url('../../fonts/muller-regular.woff') format('woff');    font-weight: 300;    font-style: normal;
+
+}
+@font-face {
+    font-family: 'MullerM';   src: local('MullerM'), local('MullerM'),url('../../fonts/muller-medium.woff') format('woff');    font-weight: 600;    font-style: normal;}
+@mixin MullerR($size){
+    font-size: $size;
+    font-family: 'Muler',sans-serif;
+}
+@mixin MullerEB($size){
+    font-size: $size;
+    font-family: 'MullerM',sans-serif;
+    font-weight: bold;
+}
+
+
+@mixin GradientText{
+    background-clip: text;
+    background-image:$primary-gradient;
+    color:transparent;
+}
+
+
+@mixin PassiveButton{
+    background-image: $primary-gradient;
+    &:hover{
+        background-image:none;
+        background-color: $primary-hover;
+    }
+    &:active{
+        background-image:none;
+        background-color: $primary-active;
+    }
+}
+
+@mixin ActiveButton{
+    background-image:$primary-gradient;
+    color:transparent;
+    background-clip: text;
+    background-color: transparent;
+    &:hover{
+        background-clip:initial;
+        color: white;
+        background-image: $primary-gradient;
+    }
+    &:active{
+        background-clip: initial;
+        color: white;
+        background-image:none;
+        background-color: $primary-active;
+    }
+}
+
+@mixin MenuButton{
+    background-color: $secondary-color;
+    box-shadow: 0 9px 40px 0 $shadow-color;
+    &:hover{
+        background-image: $primary-gradient;
+    }
+    &:active{
+        background-color: $primary-active;
+    }
+}
+
+@mixin CardButton{
+    background-color: transparent;
+    border: none;
+    outline: 1.5px solid $secondary-text;
+    outline-offset: -1.5px;
+    color:$secondary-text;
+    &:hover{
+        outline: none;
+        background-image: $primary-gradient;
+        color: white;
+    }
+    &:active{
+        outline: none;
+        background-image:none;
+        background-color:$primary-active;
+        color: white;
+    }
+}
+
+@mixin GradientStrokeButton($input-color){
+    border:2px solid transparent;
+    border-radius: 100px;
+    background: transparent;
+    background-image: linear-gradient(90deg,$input-color,$input-color), $primary-gradient;
+    background-origin: border-box;
+    background-clip: padding-box,border-box;
+}
