@@ -5,7 +5,7 @@
 
 }
 @font-face {
-    font-family: 'MullerM';   src: local('MullerM'), local('MullerM'),url('../../fonts/muller-medium.woff') format('woff');    font-weight: 600;    font-style: normal;}
+    font-family: 'MullerM';   src: local('MullerM'), local('MullerM'),url('../../fonts/muller-medium.woff') format('woff');    font-weight: 900;    font-style: normal;}
 @mixin MullerR($size){
     font-size: $size;
     line-height: 109.5%;

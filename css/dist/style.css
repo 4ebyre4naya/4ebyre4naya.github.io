@@ -7,7 +7,7 @@
 @font-face {
   font-family: "MullerM";
   src: local("MullerM"), local("MullerM"), url("../../fonts/muller-medium.woff") format("woff");
-  font-weight: 600;
+  font-weight: 900;
   font-style: normal;
 }
 header {
@@ -146,6 +146,7 @@ header {
   height: 202px;
   transform: translate(200%, 200px);
   position: absolute;
+  display: contents;
   background-image: url("../../images/overlayfries.png");
 }
 
@@ -187,7 +188,7 @@ header {
   display: flex;
   column-gap: 24px;
   width: 100%;
-  margin: 29px 0 0 0;
+  margin: 29px 0 111px 0;
 }
 .menu__buttons button, .menu__buttons li {
   display: block;
@@ -195,7 +196,6 @@ header {
 }
 
 .menu-wrapper {
-  margin-top: 111px;
   display: flex;
   flex-direction: column;
 }
@@ -784,10 +784,17 @@ h4 {
     height: 20px;
   }
 
+  .info .info__promo-text {
+    width: 100%;
+  }
+  .info .info__promo-text p {
+    width: 300px;
+  }
+
   .menu .menu__buttons {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 60px 60px;
+    grid-template-rows: auto auto;
     gap: 15px;
     max-height: 100px;
     row-gap: 15px;
@@ -805,6 +812,9 @@ h4 {
 
   .events .events-row {
     column-gap: 7px;
+  }
+  .events .events__text-block-second {
+    row-gap: 30px;
   }
   .events .events__text-block-second h2 {
     font-size: 56px;
@@ -841,13 +851,129 @@ h4 {
     max-width: 320px;
   }
 
-  .menu .menu__cards {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
+  .info {
+    margin-bottom: 70px;
+  }
+  .info .info-wrapper h1 {
+    font-size: 48px;
+  }
+  .info .info-wrapper h1 svg {
+    height: 50px;
+  }
+  .info .info-wrapper .info__promo-image {
+    height: 365px;
+  }
+  .info .info-wrapper .info__promo-text p {
+    font-size: 14px;
+    width: 290px;
+    margin-bottom: 11px;
+  }
+  .info .info-wrapper .info__promo-text span {
+    font-size: 14px;
+  }
+  .info .info-wrapper .info__promo-text .info__promo-video {
+    margin-bottom: 32px;
+  }
+  .info .info-wrapper .info__promo-text .active-button {
+    font-size: 16px;
+  }
+  .info .info-wrapper .info__promo-text .info__promo-text-buttons {
+    width: 100%;
   }
 
-  .events h2 {
+  .menu h2 {
     font-size: 48px;
+  }
+  .menu .menu__buttons {
+    margin-bottom: 63px;
+  }
+  .menu .menu__buttons .menu-button {
+    padding: 12px;
+    font-size: 12px;
+  }
+  .menu .menu__cards {
+    column-gap: 13px;
+    row-gap: 63px;
+  }
+  .menu .menu__cards .menu__cards-card {
+    border-radius: 18px;
+  }
+  .menu .menu__cards .menu__cards-card .card__content {
+    margin-top: -34px;
+  }
+  .menu .menu__cards .menu__cards-card img {
+    width: 95px;
+    margin-bottom: 12px;
+  }
+  .menu .menu__cards .menu__cards-card .card__title {
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .menu .menu__cards .menu__cards-card p {
+    margin-bottom: 12px;
+    font-size: 9px;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional {
+    padding: 0 11px;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .sizes {
+    margin-bottom: 12px;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .sizes button {
+    font-size: 9px;
+    padding: 7px;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .gradient-stroke button {
+    padding: 6px 0;
+    font-size: 9px;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .price-controls {
+    margin-bottom: 13px;
+    flex-wrap: wrap;
+    row-gap: 4px;
+    justify-content: center;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .price-controls .price span:first-child {
+    font-size: 15px !important;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .price-controls .price span:nth-child(2) {
+    margin-left: 1px;
+    font-size: 10px;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .price-controls .amount {
+    column-gap: 8px;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .price-controls .amount button {
+    width: 14px;
+    padding: 1px 2px;
+    font-size: 11px;
+  }
+  .menu .menu__cards .menu__cards-card .card__functional .price-controls .amount span {
+    font-size: 14px;
+  }
+  .menu .menu__cards .menu__cards-card .passive-button {
+    padding: 8px;
+    font-size: 11px;
+  }
+  .menu .menu__img-block {
+    border-radius: 20px;
+    margin: 28px 0 63px 0;
+    padding: 74px 0;
+    font-size: 27px;
+  }
+
+  .events {
+    margin-bottom: 98px;
+  }
+  .events .events__text-block-second h2 {
+    font-size: 48px;
+  }
+  .events .events__text-block-second p {
+    font-size: 14px;
+  }
+  .events .events__img-block {
+    border-radius: 18px;
+    height: 100px;
   }
   .events .events__img-block div h4 {
     font-size: 15px;
@@ -855,5 +981,22 @@ h4 {
   .events .events__img-block div button {
     max-width: 60px;
     font-size: 10px;
+  }
+
+  .aboutus {
+    margin-bottom: 64px;
+  }
+  .aboutus h2 {
+    font-size: 48px;
+  }
+  .aboutus p {
+    font-size: 14px;
+  }
+
+  footer a {
+    font-size: 17px;
+  }
+  footer a.telephone {
+    font-size: 15px;
   }
 }
