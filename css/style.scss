@@ -51,7 +51,6 @@ button{
     }
     &.card-button{
         @include CardButton;
-        
     }
 }
 h1,h2,h3{
@@ -66,7 +65,32 @@ h3{
 h4{
     @include MullerEB(24px);
 }
-
+.orderModal{
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    .modal{
+        background-color: $bg-color;
+        z-index: 10001;
+        padding: 40px;
+        border-radius: 30px;
+        row-gap: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    p{
+        @include MullerR(20px);
+    }
+    span{
+        @include MullerR(20px);
+    }
+}
 //ADAPTING
 
 @media (max-width: 1024px) {

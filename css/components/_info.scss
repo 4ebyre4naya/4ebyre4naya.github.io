@@ -46,11 +46,12 @@
                 content: "";
                 width: 202px;
                 height: 202px;
-                // top:-13%;
-                // left:74%;
+                top:-13%;
+                left:-15%;
                 transform: translate(200%,200px);
                 position: absolute;
-                display: contents;
+                display: none;
+                overflow: hidden;
                 background-image: url("../../images/overlayfries.png");
             }
         }
@@ -63,7 +64,28 @@
     }
     video{
         border-radius: 23px;
+        display: block;
+        cursor: pointer;
     }
+}
+.video-wrapper {
+    position: relative;
+    width: fit-content;
+}
+.play-btn.hidden{
+    transition: 0.3s;
+    display: none;
+}
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+    padding: 0;
 }
 .info__fries{
     position: absolute;

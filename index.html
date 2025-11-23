@@ -8,6 +8,16 @@
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
+    <div class="no-scroll"></div>
+    <script src="./js/script.js"></script>
+    <div class="orderModal" id="#orderModal">
+        <div class="modal">
+            <h3>Thanks for ordering!</h2>
+            <p class="modalPizzaInfo" id="#modal-info"></p>
+            <span class="modalPrice" id="#modal-price"></span>
+            <button class="passive-button" id="#back-button">Go back to the page</button>
+        </div>
+    </div>
     <header id="Header">
         <div class="container">
             <nav class="header__nav">
@@ -136,13 +146,56 @@
                     <p>We will deliver juicy pizza for your family in 30 minutes, if the courier is late - pizza is free!</p>
                     <div class="info__promo-video">
                         <span>Cooking process:</span>
-                        <video width="272px" controls height="193px" poster="./images/pizza_placeholder.png">
-                            <source src="./images/videoplayback (2).mp4">
-                        </video>
+                        <div class="video-wrapper">
+                            <video id="promoVideo" width="272" height="193" poster="./images/videothumbnail.png">
+                                <source src="./images/videoplayback (2).mp4">
+                            </video>
+                            <button id="playBtn" class="play-btn">
+                                <svg width="152" height="152" viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_dd_24909_4)">
+<ellipse cx="75.6218" cy="70.9335" rx="40.5647" ry="40.5049" fill="url(#paint0_linear_24909_4)"/>
+<ellipse cx="75.6218" cy="70.9335" rx="40.5647" ry="40.5049" stroke="url(#paint1_linear_24909_4)" stroke-width="3"/>
+</g>
+<path d="M88.7117 72.0912C88.7116 72.6273 88.4252 73.1223 87.9608 73.3901L70.576 83.4125C70.1119 83.6801 69.5399 83.6796 69.076 83.4116C68.6126 83.1436 68.3271 82.649 68.327 82.1137V62.0688C68.327 61.5332 68.6124 61.038 69.076 60.77C69.5398 60.502 70.1119 60.5014 70.576 60.769L87.9608 70.7914L88.1268 70.9018C88.4928 71.1834 88.7117 71.622 88.7117 72.0912Z" stroke="url(#paint2_linear_24909_4)" stroke-width="3" stroke-linejoin="round"/>
+<defs>
+<filter id="filter0_dd_24909_4" x="-1.52588e-05" y="1.62125e-05" width="151.244" height="151.124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4.62857"/>
+<feGaussianBlur stdDeviation="16.7786"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_24909_4"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="12"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.24 0 0 0 0 0 0 0 0 0.67 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_24909_4" result="effect2_dropShadow_24909_4"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_24909_4" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_24909_4" x1="111.894" y1="33.8521" x2="22.4698" y2="74.2683" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1C0C00"/>
+<stop offset="0.31425" stop-color="#1C0700"/>
+<stop offset="0.693673" stop-color="#140900"/>
+<stop offset="1" stop-color="#1C0C00"/>
+</linearGradient>
+<linearGradient id="paint1_linear_24909_4" x1="104.921" y1="30.4286" x2="37.007" y2="40.3662" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF612E"/>
+<stop offset="1" stop-color="#FFA32B"/>
+</linearGradient>
+<linearGradient id="paint2_linear_24909_4" x1="87.2117" y1="80.4496" x2="84.3846" y2="61.0719" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF612E"/>
+<stop offset="1" stop-color="#FFA32B"/>
+</linearGradient>
+</defs>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                     <div class="info__promo-text-buttons gradient-stroke">
-                        <button class="active-button">To order</button>
-                        <button class="active-button">Pizza-menu</button>
+                        <button class="active-button" onclick="window.location.href='#Header'">To order</button>
+                        <button class="active-button" onclick="window.location.href='#Menu'">Pizza-menu</button>
                     </div>
                 </div>
                 <div class="info__promo-image"></div>
@@ -466,25 +519,25 @@
                     <ul type="none">
                         <li><a href="#Header">Home</a></li>
                         <li><a href="#">To order</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Menu</a></li>
+                        <li><a href="#Aboutus">About us</a></li>
+                        <li><a href="#Events">Events</a></li>
+                        <li><a href="#Menu">Menu</a></li>
                     </ul>
                     <ul type="none">
-                        <li><a href="#Header">Events</a></li>
+                        <li><a href="#Events">Events</a></li>
                         <li><a href="./404.html">3 Pizza 1 Free coffee</a></li>
                         <li><a href="./404.html">2 Pizza for 1 price</a></li>
                         <li><a href="./404.html">Kitchen Tour</a></li>
                     </ul>
                     <ul type="none">
-                        <li><a href="#Header">Menu</a></li>
+                        <li><a href="#Menu">Menu</a></li>
                         <li><a href="#">Show all</a></li>
                         <li><a href="#">Seaproducts</a></li>
                         <li><a href="#">Vegan</a></li>
                         <li><a href="#">Meat</a></li>
                     </ul>
                     <ul type="none">
-                        <li><a href="#Header">About Us</a></li>
+                        <li><a href="#Aboutus">About Us</a></li>
                         <li><a href="./404.html">Our History</a></li>
                         <li><a href="#">Why we?</a></li>
                     </ul>

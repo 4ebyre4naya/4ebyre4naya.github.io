@@ -144,9 +144,12 @@ header {
   content: "";
   width: 202px;
   height: 202px;
+  top: -13%;
+  left: -15%;
   transform: translate(200%, 200px);
   position: absolute;
-  display: contents;
+  display: none;
+  overflow: hidden;
   background-image: url("../../images/overlayfries.png");
 }
 
@@ -160,6 +163,30 @@ header {
 }
 .info__promo-video video {
   border-radius: 23px;
+  display: block;
+  cursor: pointer;
+}
+
+.video-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.play-btn.hidden {
+  transition: 0.3s;
+  display: none;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+  padding: 0;
 }
 
 .info__fries {
@@ -631,7 +658,7 @@ button.menu-button {
 button.menu-button:hover {
   background-image: linear-gradient(to right, #FFA32B, #FF612E);
 }
-button.menu-button:active {
+button.menu-button.active {
   background-color: #FFA32B;
 }
 button.card-button {
@@ -676,6 +703,37 @@ h4 {
   line-height: 109.5%;
   font-family: "MullerM", sans-serif;
   font-weight: bold;
+}
+
+.orderModal {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.orderModal .modal {
+  background-color: #140900;
+  z-index: 10001;
+  padding: 40px;
+  border-radius: 30px;
+  row-gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.orderModal p {
+  font-size: 20px;
+  line-height: 109.5%;
+  font-family: "Muler", sans-serif;
+}
+.orderModal span {
+  font-size: 20px;
+  line-height: 109.5%;
+  font-family: "Muler", sans-serif;
 }
 
 @media (max-width: 1024px) {

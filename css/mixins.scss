@@ -62,7 +62,7 @@
     &:hover{
         background-image: $primary-gradient;
     }
-    &:active{
+    &.active{
         background-color: $primary-active;
     }
 }
