@@ -574,6 +574,39 @@ footer {
   background-clip: text;
 }
 
+.container-404 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-404 img {
+  width: 120px;
+}
+.container-404 .wrap {
+  margin: 0 auto;
+  width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: fit-content;
+  row-gap: 20px;
+}
+.container-404 .wrap h1 {
+  font-size: 100px;
+}
+.container-404 .wrap div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.container-404 .wrap p {
+  font-size: 20px;
+  line-height: 109.5%;
+  font-family: "Muler", sans-serif;
+}
+
 html {
   overflow-x: hidden;
 }
