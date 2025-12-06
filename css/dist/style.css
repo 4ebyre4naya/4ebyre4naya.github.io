@@ -32,6 +32,7 @@ header {
   align-items: start;
   padding: 56px 0;
   column-gap: 20px;
+  position: relative;
 }
 .header__nav .header__menu {
   font-size: 18px;
@@ -82,6 +83,22 @@ header {
 
 .burger-menu {
   background-color: transparent;
+  display: none;
+}
+.burger-menu .active {
+  display: none;
+}
+.burger-menu .inactive {
+  display: block;
+}
+.burger-menu.active-menu .active {
+  display: block;
+}
+.burger-menu.active-menu .inactive {
+  display: none;
+}
+
+.loginForm {
   display: none;
 }
 
@@ -858,6 +875,20 @@ h4 {
   }
 
   header .header__nav .header__menu {
+    display: none;
+    width: max-content;
+    padding: 20px;
+    flex-direction: column;
+    z-index: 1000;
+    position: absolute;
+    background-color: #140900;
+    row-gap: 20px;
+    right: 0;
+    top: 86px;
+    border-radius: 20px;
+    outline: 1px #170600;
+  }
+  header .header__nav .header__menu a svg {
     display: none;
   }
   header .header__nav .header__login-button {

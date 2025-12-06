@@ -16,6 +16,7 @@ header{
         align-items: start;
         padding: 56px 0;
         column-gap: 20px;
+        position: relative;
         .header__menu{
                 @include MullerR(18px);
                 padding: 0 0 0 0;
@@ -59,8 +60,24 @@ header{
             }
         }
 }
-
 .burger-menu{
     background-color: transparent;
+    display: none;
+    .active{
+        display: none;
+    }
+    .inactive{
+        display:block;
+    }
+    &.active-menu{
+        .active{
+        display: block;
+        }
+        .inactive{
+        display:none;
+    }
+    }
+}
+.loginForm{
     display: none;
 }

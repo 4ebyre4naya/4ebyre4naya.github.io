@@ -142,15 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         orderNowBtn.addEventListener("click",()=>{
-            // console.log(card);
-            // const pizzaName = card.querySelector('.card__title').textContent;
-            // const pizzaSize = card.querySelector('.sizes .active').textContent;
-            // const pizzaQuantity = card.querySelector('.amount span').textContent;
-            // const pizzaPrice = card.querySelector('.price span:first-child').textContent.replace(',','.');
-
-            // document.getElementById('#modal-info').textContent = `${pizzaName} ${pizzaSize} cm, x${pizzaQuantity}`;
-            // document.getElementById('#modal-price').textContent = `Total: ${(+pizzaPrice).toFixed(2)}$`;
-            // modal.style.display = 'flex';
             showModal(card);
         })
         backButton.addEventListener('click', function() {
@@ -219,4 +210,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Находим кнопку бургер-меню и меню
+    const burgerMenu = document.querySelector('.burger-menu');
+    const headerMenu = document.querySelector('.header_menu');
+    
+        burgerMenu.addEventListener('click', function() {
+            if (burgerMenu.classList.contains('active')) {
+                burgerMenu.classList.remove('active-menu');
+            }else{
+                burgerMenu.classList.add('active-menu');
+            }
+        });
+
+        const menuItems = headerMenu.querySelectorAll('a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                burgerMenu.classList.remove('active-menu');
+            });
+        });
+        
+        document.addEventListener('click', function(event) {
+            if (!burgerMenu.contains(event.target) && burgerMenu.classList.contains('active')) {
+                burgerMenu.classList.remove('active-menu');
+            }
+        });
 });

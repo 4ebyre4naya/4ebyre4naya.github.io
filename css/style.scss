@@ -187,6 +187,20 @@ h4{
         .header__nav{
             .header__menu{
             display: none;
+            width: max-content;
+            padding: 20px;
+            flex-direction: column;
+            z-index: 1000;
+            position: absolute;
+            background-color: $bg-color;
+            row-gap: 20px;
+            right:0;
+            top:86px;
+            border-radius: 20px;
+            outline: 1px $footer-color;
+            a svg{
+                display: none;
+            }
         }
         .header__login-button{
             display: none;
