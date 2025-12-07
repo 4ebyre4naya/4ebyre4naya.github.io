@@ -647,6 +647,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a:hover {
+  background-clip: text;
+  background-image: linear-gradient(to right, #FFA32B, #FF612E);
+  color: transparent;
+}
 
 body {
   color: white;

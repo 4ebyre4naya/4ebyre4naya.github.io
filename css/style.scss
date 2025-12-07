@@ -25,6 +25,9 @@ html{
 a{
     text-decoration: none;
     color: inherit;
+    &:hover{
+        @include GradientText;
+    }
 }
 body{
     color: white;

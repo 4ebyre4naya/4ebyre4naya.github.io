@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const categoryButtons = document.querySelectorAll(".menu__buttons .menu-button");
     const cards = document.querySelectorAll(".menu__cards-card");
-
+    const cart=document.querySelector(".cart-icon");
+    let totalorder="";
     const originalData = Array.from(cards).map(card => ({
         title: card.querySelector(".card__title").textContent,
         desc: card.querySelector("p").textContent,
@@ -73,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const pizzaPrice = card.querySelector('.price span:first-child').textContent.replace(',','.');
 
         document.getElementById('#modal-info').textContent = `${pizzaName} ${pizzaSize} cm, x${pizzaQuantity}`;
+        totalorder+=`${pizzaName} ${pizzaSize} cm, x${pizzaQuantity}`;
         document.getElementById('#modal-price').textContent = `Total: ${(+pizzaPrice).toFixed(2)}$`;
         modal.style.display = 'flex';
         setTimeout (()=>{resetAllPizzas()},1);
@@ -213,15 +215,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Находим кнопку бургер-меню и меню
     const burgerMenu = document.querySelector('.burger-menu');
-    const headerMenu = document.querySelector('.header_menu');
+    const headerMenu = document.querySelector('.header__menu');
+    console.log(headerMenu)
     
         burgerMenu.addEventListener('click', function() {
-            if (burgerMenu.classList.contains('active')) {
+            if (burgerMenu.classList.contains('active-menu')) {
+                console.log("asddsaadsdsadsa");
                 burgerMenu.classList.remove('active-menu');
+                headerMenu.style.display="none";
             }else{
                 burgerMenu.classList.add('active-menu');
+                headerMenu.style.display="block";
             }
         });
 
@@ -229,6 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menuItems.forEach(item => {
             item.addEventListener('click', function() {
                 burgerMenu.classList.remove('active-menu');
+                headerMenu.style.display="none";
             });
         });
         
