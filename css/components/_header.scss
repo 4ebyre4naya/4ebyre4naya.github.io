@@ -40,7 +40,10 @@ header{
                     svg{
                         visibility:visible;
                     }
-                }   
+                }
+                li:last-child{
+                    display: none;
+                }
         }
         .header__login{
             display: flex;

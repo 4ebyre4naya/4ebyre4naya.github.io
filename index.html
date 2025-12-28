@@ -17,14 +17,29 @@
             <button class="passive-button" id="#back-button">Go back to the page</button>
         </div>
     </div>
-    <div class="loginForm">
-        <form>
-            <h3>Log into account</h3>
-            <input>
-            <input>
-            <button>Log in</button>
-        </form>
+    <dialog class="callback-modal" id="callback-modal" aria-labelledby="modal-title" aria-modal="true">
+    <div class="modal">
+        <div class="modal-header">
+            <form method="dialog">
+                <button class="modal-close " aria-label="Закрыть модальное окно" title="Закрыть модальное окно">&times;</button>
+            </form>
+            <h3 class="modal-title" id="modal-title">Logging in</h3>
+        </div>
+        <div class="modal-body">
+            <form class="loginform" id="loginform" action="https://formspree.io/f/xzdbvkze" method="POST">
+                <div class="loginform-group" id="email-group">
+                    <label for="email" class="loginform-label">Email:</label>
+                    <input type="email" id="email" name="email" class="loginform-input" placeholder="youraddress@gmail.com" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required aria-invalid="false">
+                </div>
+                <div class="loginform-group" id="pass-group">
+                    <label for="password" class="loginform-label">Password:</label>
+                    <input type="password" id="password" name="password" class="loginform-input" placeholder="Password" autocomplete="password" required aria-invalid="false">
+                </div>
+                <button type="submit" class="passive-button loginform-submit" id="submit-button" aria-label="log in" title="Log in">Log in</button>
+            </form>
+        </div>
     </div>
+    </dialog>
     <header id="Header">
         <div class="container">
             <nav class="header__nav">
@@ -86,9 +101,14 @@
                         </svg>
                         </a>
                     </li>
+                    <li>
+                        <a href="#Info" class="loginforma">
+                        Log in
+                        </a>
+                    </li>
                 </ul>
                 <div class="header__login">
-                    <button class="passive-button header__login-button">
+                    <button class="passive-button header__login-button loginformbtn">
                         Log in
                     </button>
                     <button class="passive-button cart-icon">
@@ -163,8 +183,8 @@
                     <div class="info__promo-video">
                         <span>Cooking process:</span>
                         <div class="video-wrapper">
-                            <video id="promoVideo" width="272" height="193" poster="./images/videothumbnail.png">
-                                <source src="./images/videoplayback (2).mp4">
+                            <video id="promoVideo" width="272" height="193" poster="./images/videothumbnail.png" muted loop>
+                                <source src="./images/pizza-video.mp4">
                             </video>
                             <button id="playBtn" class="play-btn">
                                 <svg width="152" height="152" viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -9,6 +9,7 @@
 @import "./components/_404page";
 html{
     overflow-x: hidden;
+    scroll-behavior:smooth;
 }
 *{
     padding:0 0;
@@ -32,12 +33,17 @@ a{
 body{
     color: white;
     background-color: $bg-color;
+}
+header,section,footer{
     padding:0 20px;
 }
 button{
     border: 0;
     border-radius: 100px;
     color: white;
+    &:hover{
+        cursor: pointer;
+    }
     &.passive-button{
         @include PassiveButton;
         @include MullerR(18px);
@@ -56,6 +62,7 @@ button{
     &.card-button{
         @include CardButton;
     }
+
 }
 h1,h2,h3{
     color: white;
@@ -93,6 +100,53 @@ h4{
     }
     span{
         @include MullerR(20px);
+    }
+}
+dialog{
+    margin:0 auto;
+    top:50%;
+    border-radius: 20px;
+    border: none;
+    outline:none;
+    .modal{
+        outline:0;
+        background-color: $secondary-color;
+        color:white;
+        padding: 10px 20px 20px 20px;
+        
+        .modal-header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            form{
+                margin-left: auto;
+                button{
+                    @include ActiveButton();
+                    font-size: 16px;
+                    width:20px;
+                    height:20px;
+                }
+            }
+        }
+        .modal-body{
+            margin-top: 20px;
+            form{
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+                .loginform-group{
+                    margin-left: auto;
+                    @include MullerR(20px);
+                    input{
+                        background-color: $bg-color;
+                        border: none;
+                        padding: 5px 0 5px 5px;
+                        border-radius: 10px;
+                        color:white;
+                    }
+                }
+            }
+        }
     }
 }
 //ADAPTING
@@ -203,6 +257,9 @@ h4{
             outline: 1px $footer-color;
             a svg{
                 display: none;
+            }
+            li:last-child{
+                display: block;
             }
         }
         .header__login-button{

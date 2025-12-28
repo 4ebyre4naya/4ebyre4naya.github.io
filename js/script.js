@@ -14,12 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (video.paused) {
             video.play().then(() => {
                 playBtn.classList.add("hidden");
+                video.setAttribute("controls");
             }).catch(err => {
                 console.log("Ошибка воспроизведения:", err);
             });
+            
         } else {
             video.pause();
             playBtn.classList.remove("hidden");
+            video.removeAttribute("controls");
         }
     });
 });
@@ -211,18 +214,26 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
-
+    const loginforma=document.querySelector(".loginforma");
+    const loginformbtn=document.querySelector(".loginformbtn");
+    const loginform=document.getElementById("callback-modal");
+    loginformbtn.addEventListener('click',function(){
+            loginform.showModal();
+    })
+    loginforma.addEventListener('click',function(){
+        loginform.showModal();
+    })
 });
 
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.querySelector('.burger-menu');
     const headerMenu = document.querySelector('.header__menu');
     console.log(headerMenu)
-    
         burgerMenu.addEventListener('click', function() {
             if (burgerMenu.classList.contains('active-menu')) {
                 console.log("asddsaadsdsadsa");
                 burgerMenu.classList.remove('active-menu');
+                if(document.body.clientWidth<=786)
                 headerMenu.style.display="none";
             }else{
                 burgerMenu.classList.add('active-menu');
@@ -233,8 +244,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const menuItems = headerMenu.querySelectorAll('a');
         menuItems.forEach(item => {
             item.addEventListener('click', function() {
+                if(document.body.clientWidth<=786){
                 burgerMenu.classList.remove('active-menu');
                 headerMenu.style.display="none";
+                }
             });
         });
         

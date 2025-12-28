@@ -63,6 +63,9 @@ header {
 .header__nav .header__menu li a:hover svg {
   visibility: visible;
 }
+.header__nav .header__menu li:last-child {
+  display: none;
+}
 .header__nav .header__login {
   display: flex;
   padding: 0 0;
@@ -528,7 +531,7 @@ header {
 
 footer {
   background-color: #170600;
-  padding: 64px 0 70px 0;
+  margin: 0 0 70px 0;
 }
 
 .container {
@@ -580,6 +583,10 @@ footer {
 .footer__socials-block ul img {
   width: 24px;
 }
+.footer__socials-block ul img:hover {
+  transition: 0.3s linear;
+  filter: contrast(250%);
+}
 
 .telephone {
   font-size: 20px;
@@ -626,6 +633,7 @@ footer {
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -656,6 +664,9 @@ a:hover {
 body {
   color: white;
   background-color: #140900;
+}
+
+header, section, footer {
   padding: 0 20px;
 }
 
@@ -663,6 +674,9 @@ button {
   border: 0;
   border-radius: 100px;
   color: white;
+}
+button:hover {
+  cursor: pointer;
 }
 button.passive-button {
   background-image: linear-gradient(to right, #FFA32B, #FF612E);
@@ -791,6 +805,69 @@ h4 {
   font-family: "Muler", sans-serif;
 }
 
+dialog {
+  margin: 0 auto;
+  top: 50%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+dialog .modal {
+  outline: 0;
+  background-color: #210A01;
+  color: white;
+  padding: 10px 20px 20px 20px;
+}
+dialog .modal .modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+dialog .modal .modal-header form {
+  margin-left: auto;
+}
+dialog .modal .modal-header form button {
+  background-image: linear-gradient(to right, #FFA32B, #FF612E);
+  color: transparent;
+  background-clip: text;
+  background-color: transparent;
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+}
+dialog .modal .modal-header form button:hover {
+  background-clip: initial;
+  color: white;
+  background-image: linear-gradient(to right, #FFA32B, #FF612E);
+}
+dialog .modal .modal-header form button:active {
+  background-clip: initial;
+  color: white;
+  background-image: none;
+  background-color: #FFA32B;
+}
+dialog .modal .modal-body {
+  margin-top: 20px;
+}
+dialog .modal .modal-body form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+dialog .modal .modal-body form .loginform-group {
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 109.5%;
+  font-family: "Muler", sans-serif;
+}
+dialog .modal .modal-body form .loginform-group input {
+  background-color: #140900;
+  border: none;
+  padding: 5px 0 5px 5px;
+  border-radius: 10px;
+  color: white;
+}
+
 @media (max-width: 1024px) {
   .flex {
     justify-content: center;
@@ -895,6 +972,9 @@ h4 {
   }
   header .header__nav .header__menu a svg {
     display: none;
+  }
+  header .header__nav .header__menu li:last-child {
+    display: block;
   }
   header .header__nav .header__login-button {
     display: none;
