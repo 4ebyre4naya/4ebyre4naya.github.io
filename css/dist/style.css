@@ -886,7 +886,7 @@ dialog .modal .modal-body form .loginform-group input {
   }
   .info .info__promo-image {
     order: -1;
-    max-width: 100%;
+    max-width: 60%;
     background-position: center;
   }
 
